@@ -44,7 +44,7 @@ const Games = () => {
             })
           }
         </div>
-        <div>
+        <div className='button-box'>
           <ButtonDeleteAll deleteGames={deleteAllGames}/>
           <ButtonReloadAll reloadGames={reloadAllGames}/>
         </div>
