@@ -3,6 +3,7 @@ import "./Games.css"
 import data from "../data"
 import ButtonDeleteGame from './ButtonDeleteGame'
 import ButtonDeleteAll from './ButtonDeleteAll'
+import ButtonReloadAll from './ButtonReloadAll'
 
 const Games = () => {
   const [gameList, setGameList ] = useState(data)
@@ -17,6 +18,10 @@ const Games = () => {
 
       const deleteAllGames = () => {
         setGameList([])
+      }
+
+      const reloadAllGames = () => {
+        setGameList(data)
       }
 
   return (
@@ -41,6 +46,7 @@ const Games = () => {
         </div>
         <div>
           <ButtonDeleteAll deleteGames={deleteAllGames}/>
+          <ButtonReloadAll reloadGames={reloadAllGames}/>
         </div>
       </>
   )
