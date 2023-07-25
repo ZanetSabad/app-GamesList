@@ -1,10 +1,11 @@
 import React from 'react'
+import Games from './components/Games'
 
 
 const App = () => {
   return (
     <div>
-     <h1>Test</h1>
+     <Games/>
     </div>
   )
 }
