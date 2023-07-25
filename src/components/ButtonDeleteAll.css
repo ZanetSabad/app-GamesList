@@ -1,0 +1,10 @@
+.button-delete-all{
+    margin-left: 20px;
+    cursor: pointer;
+    background-color: #901a3f;
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+
+}
