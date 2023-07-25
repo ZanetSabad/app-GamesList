@@ -1,0 +1,8 @@
+.one-delete-game{
+    display: block;
+    color: white;
+    background-color: #901a3f;
+    padding: 5px;
+    cursor: pointer;
+    width: 100%
+}

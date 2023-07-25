@@ -1,35 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "./Games.css"
 import data from "../data"
 import ButtonDeleteGame from './ButtonDeleteGame'
-import ButtonDeleteAll from './ButtonDeleteAll'
-import ButtonReloadAll from './ButtonReloadAll'
 
 const Games = () => {
-  const [gameList, setGameList] = useState(data)
-
- const deleteOneGame = (idecko) => {
-  const filtredGames = gameList.filter((oneGame) => {
-    return (
-      oneGame.id !== idecko
-    )
-  })
-  setGameList(filtredGames)
- }
-
- const deleteAllGames = () => {
-  setGameList([])
- }
-
- const reloadAllGames= () => {
-  setGameList(data)
- }
-
   return (
-    <>
       <div className='all-movie'>
         {
-          gameList.map((oneGame)=> {
+          data.map((oneGame)=> {
               const{id, image, title, age, tags, description} = oneGame
 
               return(
@@ -39,18 +17,12 @@ const Games = () => {
                       <p>{age}</p>
                       <p>{tags}</p>
                       <p>{description}</p>
-                      <ButtonDeleteGame deleteGame={() => deleteOneGame(id)}/>
+                      <ButtonDeleteGame/>
                   </div>
               )
-
           })
         }
       </div>
-      <div className='button-box'>
-        <ButtonDeleteAll deleteGames={deleteAllGames}/>
-        <ButtonReloadAll reloadGames={reloadAllGames}/>
-      </div>
-    </>
   )
 }
 
