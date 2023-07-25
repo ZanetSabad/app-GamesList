@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Games.css"
 import data from "../data"
 import ButtonDeleteGame from './ButtonDeleteGame'
 
 const Games = () => {
+  const [gameList, setGameList ] = useState(data)
+      const deleteOneGame = (idecko) => {
+        const filtredGames = gameList.filter((oneGame) => {
+          return(
+            oneGame.id !== idecko
+          )
+        })
+        setGameList(filtredGames)
+      }
   return (
-      <div className='all-movie'>
+    <div className='all-movie'>
         {
-          data.map((oneGame)=> {
+          gameList.map((oneGame)=> {
               const{id, image, title, age, tags, description} = oneGame
 
               return(
@@ -17,7 +26,7 @@ const Games = () => {
                       <p>{age}</p>
                       <p>{tags}</p>
                       <p>{description}</p>
-                      <ButtonDeleteGame/>
+                      <ButtonDeleteGame deleteGame={() => deleteOneGame(id)}/>
                   </div>
               )
           })
